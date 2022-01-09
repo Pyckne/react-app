@@ -1,0 +1,44 @@
+.NavBar-header {
+    height: 80px;
+    display: flex;
+    background-color: #0f0d0e;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10; }
+
+.NavBar-header a {
+    color: white;
+    text-decoration: none;
+    padding-left: 10px; }
+
+.NavBar-logo-container {
+    padding-left: 20px; 
+}
+
+.NavBar-brand {
+    font-size: 1.6rem;
+}
+
+.NavBar-header .NavBar-container {
+    padding-right: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05); 
+}
+
+.NavBar-header .NavBar-container .NavBar-list {
+    margin: 0;
+    padding: 0;
+    list-style: none; 
+}
+
+.NavBar-header .NavBar-container .NavBar-list .NavBar-item {
+    display: inline-block; 
+}
+
+.NavBar-header .NavBar-container .NavBar-list .NavBar-item a {
+    display: block;
+    padding: 0.5rem 1rem; 
+}
