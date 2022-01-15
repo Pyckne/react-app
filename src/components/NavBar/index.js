@@ -1,4 +1,5 @@
-import './NavBar.css';
+import CartWidget from '../CartWidget';
+import './style.css';
 
 function NavBar() {
   return (
@@ -12,7 +13,7 @@ function NavBar() {
                 <li className="NavBar-item"><a href="index.html">Destacado</a></li>
                 <li className="NavBar-item"><a href="index.html">Ofertas</a></li>
                 <li className="NavBar-item"><a href="index.html">Promos</a></li>
-                <li className="NavBar-item"><a href="index.html">Otras ofertas</a></li>
+                <li className="NavBar-item"><a href="index.html"><CartWidget /></a></li>
             </ul>
         </nav>
     </header>
