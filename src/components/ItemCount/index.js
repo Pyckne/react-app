@@ -8,6 +8,7 @@ import RemoveIcon from "@material-ui/icons/Remove";
 export default function ItemCount(props) {
 
     const [itemCount, setItemCount] = useState(1);
+    const stockQuantity = props.stock;
     return (
           <div className="ItemCount-container">
             <div className="ItemCount-item"> 
@@ -26,7 +27,7 @@ export default function ItemCount(props) {
                     <ButtonGroup>
                         <Button
                             onClick={() => {
-                            setItemCount(itemCount + 1);
+                            setItemCount(Math.min(itemCount + 1, stockQuantity));
                     }}>{" "}
                         <AddIcon fontSize="small" />
                         </Button>

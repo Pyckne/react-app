@@ -1,0 +1,25 @@
+.Item-container{
+    width: 250px;
+    height: 250px;
+    padding: 0;
+    margin: 5px;
+    background-color: #928080;
+    border-radius: 10px;
+}
+
+.Item-container .Item-tittle{
+    font-size: 1.6rem;
+}
+
+.Item-container .Item-price {
+    font-size: 1.3rem;
+    color: #000000;
+}
+
+.Item-container .Item-img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
