@@ -2,7 +2,7 @@ import './style.css'
 /* import ItemCount from "../ItemCount"; */
 import ItemList from "../ItemList";
 
-export default function CartWidget(props) {
+export default function ItemListContainer(props) {
 
     return (
         <>

@@ -2,7 +2,7 @@ import Badge from "@material-ui/core/Badge";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 
-export default function ItemListContainer() {
+export default function CartWidget() {
 
     return (
             <Badge badgeContent={3}>
