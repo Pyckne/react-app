@@ -1,25 +1,38 @@
 .Item-container{
     width: 250px;
-    height: 250px;
+    height: 375px;
     padding: 0;
     margin: 5px;
-    background-color: #928080;
+    background-color: #e4b4b4;
     border-radius: 10px;
 }
 
 .Item-container .Item-tittle{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    padding: 0;
+    margin: 0;
 }
 
 .Item-container .Item-price {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #000000;
+    padding: 0;
+    margin: 0;
 }
 
 .Item-container .Item-img{
     width: 100%;
-    height: 100%;
+    height: 60%;
+    border-radius: 10px 10px 0 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.Item-container .Item-detail{
+    width: 80%;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    cursor: pointer;
 }
