@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react';
-import { ITEMS } from './items.js';
-import Item from '../Item';
+import {useEffect, useState} from 'react';
+import { ITEMS } from '../ItemList/items.js';
+import {useParams} from 'react-router-dom';
+import Item from '../Item/index.js';
 
-function ItemList () {
+const ItemListCategory = () => {
+    const { id } = useParams();
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -10,7 +12,7 @@ function ItemList () {
     useEffect(() => {
         const getItems = () => {
             return new Promise((resolve, reject) => {
-                setTimeout(() => resolve(ITEMS), 2000);
+                setTimeout(() => resolve(ITEMS.filter(item => item.categoryId === id)), 2000);
             });
         };
 
@@ -27,15 +29,15 @@ function ItemList () {
         }
 
         fetchItems();
-    }, []);
+    }, [id]);
 
     return (
-        <>
+        <div className="ItemListContainer-container">
             { loading ? <h1>Loading...</h1> : null }
             { error ? <h1>Error</h1> : null }
             { items.map(item => <Item key={item.id} {...item} />) }
-        </>
+        </div>
     );
 }
 
-export default ItemList;
+export default ItemListCategory;

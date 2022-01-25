@@ -13,13 +13,14 @@
 .NavBar-header a {
     color: white;
     text-decoration: none;
-    padding-left: 10px; }
+    padding-left: 10px;
+ }
 
 .NavBar-logo-container {
     padding-left: 20px; 
 }
 
-.NavBar-brand {
+.NavBar-header .NavBar-logo-conteiner a {
     font-size: 1.6rem;
 }
 

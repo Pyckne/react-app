@@ -1,18 +1,25 @@
 import './App.css';
 import './components/NavBar/index.js'
 import NavBar from './components/NavBar/index.js';
-import ItemListContainer from './components/ItemListContainer/index.js';
-import ItemDetailContainer from './components/ItemDetailContainer/index.js';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './components/pages/HomePage.js';
+import ItemDetailContainerPage from './components/pages/ItemDetailContainerPage.js';
+import CategoryPage from './components/pages/CategoryPage.js';
+import NotFoundPage from './components/pages/NotFoundPage.js';
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <NavBar />
-      <main>
-        <ItemListContainer greeting="Sí" />
-        <ItemDetailContainer />
-      </main>
-    </div>
+      <Routes>
+        <Route path="/">
+          <Route index element={<HomePage />} />        
+            <Route path="item/:id" element={<ItemDetailContainerPage />} />
+            <Route path="category/:id" element={<CategoryPage />} />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
