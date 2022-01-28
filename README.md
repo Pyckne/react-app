@@ -1,3 +1,23 @@
+# Idea detrás del Proyecto
+
+El proyecto se enfoca en trabajar las bases de React, desarrollarlo basandose en la lógica de programación y con un diseño visual minimalista para pulir el funcionamiento y posteriormente trabajar lo visual.
+
+# Librerias
+
+Por el momento estoy trabajando con react-router-dom para la navegación, material-ui para los counters e icónos  y json-server para simular el funcionamiento de una API externa, es dable destacar que estoy pasando los productos desde una const en `items.js` debido a que es más simple trabajar con un setTimeout que levantando el el server de igual manera agregué al scrip de package.json con el comando `npm run json-server` y un mock `db.json` con la misma información que el la constante antes nombrada.
+
+# Desarrollo
+
+Desde el principio me enfoqué en la lógica, dejando en segundo plano lo visual, tratando de implementar soluciones de manera eficiente (utilizando soluciones enfocadas en utilizar componentes dinámicos y faciles de entender) teniendo en cuenta a los desafíos, hacerlos en un tiempo razonable y cumplir con los plazos establecidos.
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
