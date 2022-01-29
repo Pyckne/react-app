@@ -11,7 +11,7 @@ function ItemDetailContainer (i) {
     useEffect(() => {
         const getProduct = () => {
             return new Promise((resolve, reject) => {
-                setTimeout(() => resolve(ITEMS[id-1]), 2000);
+                setTimeout(() => resolve(ITEMS[id-1]), 1500);
             });
         };
 
