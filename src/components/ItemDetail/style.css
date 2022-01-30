@@ -64,15 +64,3 @@
     margin: 0 0 20px 0;
     padding: 0;
 }
-
-.ItemDetail-container .ItemDetail-actions-container .ItemDetail-button{
-    width: 100%;
-    height: auto;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    font-size: 1.5rem;
-    color: rgb(0, 0, 0);
-    margin: 0;
-    padding: 2px;
-    cursor: pointer;
-}

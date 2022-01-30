@@ -34,10 +34,12 @@ export default function ItemCount(item) {
                 </div>
             </div>
                 :
-                <>
-                    <button onClick={() => navigate('/')} className="ItemDetail-button">Continuar comprando</button>
-                    <button onClick={() => navigate('/cart')} className="ItemDetail-button">Finalizar compra</button>
-                </>
+                <div className="ItemCount-container">
+                    <div className="ItemCount-buttons">
+                        <button onClick={() => navigate('/')} className="ItemCount-action-buttons">Continuar comprando</button>
+                        <button onClick={() => navigate('/cart')} className="ItemCount-action-buttons">Finalizar compra</button>
+                    </div>
+                </div>
             }
         </>
       );
