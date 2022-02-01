@@ -29,6 +29,12 @@ const ItemListCategory = () => {
         }
 
         fetchItems();
+
+        return () => {
+            setItems([]);
+            setLoading(true);
+            setError(false);
+        };
     }, [id]);
 
     return (
