@@ -1,28 +1,28 @@
 {
     "ITEMS": [
     {
-       "id": 1,
+       "id": 0,
         "tittle": "Reloj",
         "description": "Reloj analógico de pulsera de cuero",
         "price": 2000,
         "pictureUrl": "https://picsum.photos/200/300",
         "stock": 7
     }, {
-        "id": 2,
+        "id": 1,
         "tittle": "Collar",
         "description": "Collar de perlas",
         "price": 1500,
         "pictureUrl": "https://picsum.photos/200",
         "stock": 5
     }, {
-      "  ": 3,
+        "id": 2,
         "tittle": "Pulsera",
         "description": "Pulsera de cuero",
         "price": 1000,
         "pictureUrl": "https://picsum.photos/300/300",
         "stock": 3
     }, {
-      "  ": 4,
+        "id": 3,
         "tittle": "Escritorio",
         "description": "Escritorio laminado de 115x80x50cm",
         "price": 1000,

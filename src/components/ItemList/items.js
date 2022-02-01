@@ -1,5 +1,5 @@
 export const ITEMS = [{
-    id: 1,
+    id: 0,
     tittle: 'Reloj',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel tincidunt ornare, nisl nunc aliquet nunc, eget euismod nisl nunc euismod nisl nunc',
     price: 2000,
@@ -7,7 +7,7 @@ export const ITEMS = [{
     stock: 7,
     categoryId: '1'
 }, {
-    id: 2,
+    id: 1,
     tittle: 'Collar',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel tincidunt ornare, nisl nunc aliquet nunc, eget euismod nisl nunc euismod nisl nunc',
     price: 1500,
@@ -15,7 +15,7 @@ export const ITEMS = [{
     stock: 5,
     categoryId: '1'
 }, {
-    id: 3,
+    id: 2,
     tittle: 'Pulsera',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel tincidunt ornare, nisl nunc aliquet nunc, eget euismod nisl nunc euismod nisl nunc',
     price: 1000,
@@ -23,7 +23,7 @@ export const ITEMS = [{
     stock: 3,
     categoryId: '1'
 }, {
-    id: 4,
+    id: 3,
     tittle: 'Escritorio',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel tincidunt ornare, nisl nunc aliquet nunc, eget euismod nisl nunc euismod nisl nunc',
     price: 1000,
@@ -31,7 +31,7 @@ export const ITEMS = [{
     stock: 3,
     categoryId: '2'    
 }, {
-    id: 5,
+    id: 4,
     tittle: 'Silla',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel tincidunt ornare, nisl nunc aliquet nunc, eget euismod nisl nunc euismod nisl nunc',
     price: 1200,
@@ -39,7 +39,7 @@ export const ITEMS = [{
     stock: 4,
     categoryId: '2'
 }, {
-    id: 6,
+    id: 5,
     tittle: 'Mesa',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel tincidunt ornare, nisl nunc aliquet nunc, eget euismod nisl nunc euismod nisl nunc',
     price: 1500,
