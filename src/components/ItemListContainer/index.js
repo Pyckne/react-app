@@ -9,7 +9,6 @@ export default function ItemListContainer(props) {
             <h1>¿Entendí la Consigna?</h1>
             <p>{props.greeting}</p>
             <div className="ItemListContainer-container">
-                {/* <ItemCount name="Objeto Random" price="200" stock={7}/> */}
                 <ItemList />
             </div>
         </>

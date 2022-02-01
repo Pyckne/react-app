@@ -27,6 +27,12 @@ function ItemList () {
         }
 
         fetchItems();
+
+        return () => {
+            setItems([]);
+            setLoading(true);
+            setError(false);
+        };
     }, []);
 
     return (

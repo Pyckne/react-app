@@ -26,6 +26,12 @@ function ItemDetailContainer (i) {
             }
         }
         fetchProduct();
+
+        return () => {
+            setItem([]);
+            setLoading(true);
+            setError(false);
+        };
     }, [id]);
 
 
