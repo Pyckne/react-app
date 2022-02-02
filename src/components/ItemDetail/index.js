@@ -1,12 +1,16 @@
 import './style.css';
 import {useState} from 'react';
 import ItemCount from '../ItemCount/';
+import {useContext} from 'react';
+import {CartContext} from '../../context/CartContext';
 
 function ItemDetail (item) {
   const [quantityToAdd, setQuantityToAdd] = useState(1);
   const [changeButton, setChangeButton] = useState(false);
   const stockQuantity = item.stock;
   const totalPrice = item.price * quantityToAdd;
+
+  const { addItem } = useContext(CartContext);
 
   const decreaseQuantity = () => {
     setQuantityToAdd((prevState) => (Math.max(prevState - 1, 1)));
@@ -18,8 +22,8 @@ function ItemDetail (item) {
 
   const onAdd = () => {
     alert(`Usted agrego ${quantityToAdd} items con un valor total de $${totalPrice}`);
+    addItem(item, quantityToAdd);
     setChangeButton(true);
-
   };
 
   return (

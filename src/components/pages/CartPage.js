@@ -3,7 +3,7 @@ import Cart from "../Cart";
 const CartPage = () => {
     return (
         <div className="App">
-        <Cart />
+            <Cart />
         </div>
     );
 }
