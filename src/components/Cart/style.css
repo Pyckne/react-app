@@ -1,0 +1,68 @@
+.Cart-container {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #c9bfbf;
+    padding: 20px;
+    }
+
+.Cart-container .Cart-items{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 100%;
+}
+
+.Cart-container .Cart-items .Cart-table {
+    font-size: 1.4rem;
+    background-color: #000000a1;
+    border-radius: 10px;
+    border: 1px solid #000000a1;
+}
+
+.Cart-container .Cart-items .Cart-table .Cart-table-header {
+    background-color: #978c8c;
+}
+
+.Cart-container .Cart-items .Cart-table .Cart-table-body {
+    background-color: #a59696;
+}
+
+.Cart-container .Cart-items .Cart-table .Cart-item-image{
+    margin-top: 8px;
+    width: 75px;
+    height: 70px;
+}
+
+.Cart-container .Cart-items .Cart-table .Cart-table-footer {
+    background-color: #8f8383;
+}
+
+.Cart-container .Cart-items .Cart-table .Cart-table-footer .Cart-table-footer-back-to-home {
+text-align: end;
+padding: 10px;
+}
+
+.Cart-container .Cart-total{
+    background-color: #ffffffd5;
+    margin-left: 20px;
+    padding: 0 0 25px 0; 
+    width: 25%;
+    height: 100%;
+    border-radius: 10px;
+    border: 3px solid #000000a1;
+}
+
+.Cart-container .Cart-total .Cart-total-body{
+    font-size: 1.2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    height: 100%;
+}
+
+.Cart-container .Cart-total .Cart-total-footer{
+    display: flex;
+    justify-content: space-around;
+}
