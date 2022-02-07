@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ITEMS } from './items.js';
 import Item from '../Item';
+import {getFirestore} from '../../firebase/index';
 
 function ItemList () {
     const [items, setItems] = useState([]);
@@ -9,7 +10,27 @@ function ItemList () {
 
     useEffect(() => {
         const getItems = () => {
-            return new Promise((resolve, reject) => {
+            const ddbb = getFirestore();
+            const items = ddbb.collection('items');
+            const getData = () => {
+                items.get()
+                    .then(snapshot => {
+                        const data = snapshot.docs.map(doc => {
+                            return {
+                                id: doc.id,
+                                ...doc.data()
+                            }
+                        });
+                        setItems(data);
+                        setLoading(false);
+                    })
+                    .catch(err => {
+                        setError(true);
+                        setLoading(false);
+                    });
+            }
+            getData();
+/*             return new Promise((resolve, reject) => {
                 setTimeout(() => resolve(ITEMS), 2000);
             });
         };
@@ -31,7 +52,7 @@ function ItemList () {
         return () => {
             setItems([]);
             setLoading(true);
-            setError(false);
+            setError(false); */
         };
     }, []);
 
