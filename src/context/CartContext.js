@@ -13,21 +13,17 @@ export const CartProvider = ({children}) => {
             ...item,
             quantity: quantityToAdd
         };
-        const newCart = [...cart, itemToAdd];
-        setCart(newCart);
-        setTotal(total + item.price * quantityToAdd);
-        setTotalItems(totalItems + quantityToAdd);
-        
-/*         const itemToAdd = {...item, quantityToAdd};
-        const itemAlreadyInCart = cart.find(cartItem => cartItem.id === itemToAdd.id);
+
+        const itemAlreadyInCart = cart.find(itemInCart => itemInCart.id === itemToAdd.id);
         if (itemAlreadyInCart) {
-            itemAlreadyInCart.quantityToAdd += quantityToAdd;
-            setCart([...cart]);
+            itemAlreadyInCart.quantity += quantityToAdd;
+            setCart(cart.map(itemInCart => itemInCart.id === itemToAdd.id ? itemAlreadyInCart : itemInCart));
         } else {
             setCart([...cart, itemToAdd]);
         }
+
         setTotal(total + item.price * quantityToAdd);
-        setTotalItems(totalItems + quantityToAdd); */
+        setTotalItems(totalItems + quantityToAdd);
     };
 
     const removeItem = (id) => {
