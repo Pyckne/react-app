@@ -9,7 +9,16 @@ export const CartProvider = ({children}) => {
     const [totalItems, setTotalItems] = useState(0);
 
     const addItem = (item, quantityToAdd) => {
-        const itemToAdd = {...item, quantityToAdd};
+        const itemToAdd = {
+            ...item,
+            quantity: quantityToAdd
+        };
+        const newCart = [...cart, itemToAdd];
+        setCart(newCart);
+        setTotal(total + item.price * quantityToAdd);
+        setTotalItems(totalItems + quantityToAdd);
+        
+/*         const itemToAdd = {...item, quantityToAdd};
         const itemAlreadyInCart = cart.find(cartItem => cartItem.id === itemToAdd.id);
         if (itemAlreadyInCart) {
             itemAlreadyInCart.quantityToAdd += quantityToAdd;
@@ -18,7 +27,7 @@ export const CartProvider = ({children}) => {
             setCart([...cart, itemToAdd]);
         }
         setTotal(total + item.price * quantityToAdd);
-        setTotalItems(totalItems + quantityToAdd);
+        setTotalItems(totalItems + quantityToAdd); */
     };
 
     const removeItem = (id) => {

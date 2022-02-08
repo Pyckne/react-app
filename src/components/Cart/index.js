@@ -27,10 +27,10 @@ const Cart = () => {
                         <tbody className="Cart-table-body">
                         {cart.map(item => (
                             <tr key={item.id}>
-                                <td><img className="Cart-item-image" src={item.pictureUrl} alt={item.tittle} /></td>
-                                <td>{item.tittle}</td>
-                                <td>{item.quantityToAdd}</td>
-                                <td>${item.price * item.quantityToAdd}</td>
+                                <td><img className="Cart-item-image" src={item.img} alt={item.tittle} /></td>
+                                <td>{item.name}</td>
+                                <td>{item.quantity}</td>
+                                <td>${item.price * item.quantity}</td>
                                 <td><button onClick={() => removeItem(item.id)}>X</button></td>
                             </tr>
                         ))}

@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
-import { ITEMS } from '../ItemList/items.js';
 import {useParams} from 'react-router-dom';
 import Item from '../Item/index.js';
+import {getFirestore} from '../../firebase/index.js';
 
 const ItemListCategory = () => {
     const { id } = useParams();
@@ -10,25 +10,24 @@ const ItemListCategory = () => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        const getItems = () => {
-            return new Promise((resolve, reject) => {
-                setTimeout(() => resolve(ITEMS.filter(item => item.categoryId === id)), 2000);
-            });
-        };
-
-        async function fetchItems() {
+        const ddbb = getFirestore();
+        const itemsCollection = ddbb.collection('items');
+        const getData = async () => {
             try {
-                const items = await getItems();
+                const data = await itemsCollection.where('categoryId', '==', id).get();
+                const items = data.docs.map(doc => {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                });
                 setItems(items);
                 setLoading(false);
             } catch (error) {
-                console.log(error);
                 setError(true);
-                setLoading(false);
             }
         }
-
-        fetchItems();
+        getData();
 
         return () => {
             setItems([]);
@@ -41,7 +40,7 @@ const ItemListCategory = () => {
         <div className="ItemListContainer-container">
             { loading ? <h1>Loading...</h1> : null }
             { error ? <h1>Error</h1> : null }
-            { items.map(item => <Item key={item.id} {...item} />) }
+            { items.map(item => <Item key={item.id} item={item} />) }
         </div>
     );
 }

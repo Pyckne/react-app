@@ -7,8 +7,8 @@ import {CartContext} from '../../context/CartContext';
 function ItemDetail (item) {
   const [quantityToAdd, setQuantityToAdd] = useState(1);
   const [changeButton, setChangeButton] = useState(false);
-  const stockQuantity = item.stock;
-  const totalPrice = item.price * quantityToAdd;
+  const stockQuantity = item.item.stock;
+  const totalPrice = item.item.price * quantityToAdd;
 
   const { addItem } = useContext(CartContext);
 
@@ -22,22 +22,22 @@ function ItemDetail (item) {
 
   const onAdd = () => {
     alert(`Usted agrego ${quantityToAdd} items con un valor total de $${totalPrice}`);
-    addItem(item, quantityToAdd);
+    addItem(item.item, quantityToAdd);
     setChangeButton(true);
   };
 
   return (
     <div className="ItemDetail-container">
       <div className="ItemDetail-img-container"> 
-        <img className="ItemDetail-img" src={item.pictureUrl} alt=""/>
+        <img className="ItemDetail-img" src={item.item.img} alt=""/>
       </div>
       <div className="ItemDetail-info-container">
-        <h2 className="ItemDetail-tittle">{item.tittle}</h2>
-        <p className="ItemDetail-price">Precio: ${item.price}</p>
-        <p className="ItemDetail-description">{item.description}</p>
+        <h2 className="ItemDetail-tittle">{item.item.name}</h2>
+        <p className="ItemDetail-price">Precio: ${item.item.price}</p>
+        <p className="ItemDetail-description">{item.item.description}</p>
       </div>
       <div className="ItemDetail-actions-container">
-        <ItemCount changeButton={changeButton} onAdd={onAdd} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} quantityToAdd={quantityToAdd} price={item.price} stock={item.stock} totalPrice={totalPrice}/>
+        <ItemCount changeButton={changeButton} onAdd={onAdd} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} quantityToAdd={quantityToAdd} price={item.item.price} stock={item.item.stock} totalPrice={totalPrice}/>
       </div>
     </div>  
   );
