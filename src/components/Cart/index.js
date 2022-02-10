@@ -5,10 +5,8 @@ import {CartContext} from '../../context/CartContext';
 
 
 const Cart = () => {
-
     const { cart, removeItem, total, totalItems, clearCart} = useContext(CartContext);
     const navigate = useNavigate();
-
     return (
         <>{totalItems > 0 ?
         <>
@@ -37,10 +35,10 @@ const Cart = () => {
                         </tbody>
                         <tfoot className="Cart-table-footer">
                             <tr>
-                                <td colspan="4" className="Cart-table-footer-back-to-home">
+                                <td colSpan="4" className="Cart-table-footer-back-to-home">
                                     <button onClick={()=> navigate('/')}>Continuar comprando</button> 
                                 </td>
-                                <td colspan="1" className="Cart-table-footer-empty-cart">
+                                <td colSpan="1" className="Cart-table-footer-empty-cart">
                                     <button onClick={()=> clearCart()}>Vaciar carrito</button>
                                 </td>
                             </tr>
