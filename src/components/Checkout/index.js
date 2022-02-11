@@ -24,12 +24,10 @@ const Checkout = () => {
             details: orderDetails,
             buyer: buyer
         };
-    
-
 
     ordersCollection.add(order)
         .then((res) => {
-            alert(res.id);
+            alert(`Tu pedido ha sido registrado con el ID: ${res.id} \n Este es el detalle de su compra: ${cart.map(item => `\n Producto: ${item.name} - Cantidad: ${item.quantity}`)}`);
             setBuyer(initialState);
             updateStock();
             formCarrito.reset();
@@ -56,6 +54,15 @@ const Checkout = () => {
         });
     };
 
+    const validateForm = () => {
+        if (validateName(buyer.name) && validateLastName(buyer.lastname) && validatePhone(buyer.phone) && validateEmail(buyer.email) && buyer.email === buyer.email2) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+
     return (
         <div className="Checkout-container">
             <div className="Checkout-header">
@@ -64,19 +71,44 @@ const Checkout = () => {
                     <div className="Checkout-form-container">
                         <form id="formCheckout" className="Checkout-form" onSubmit={handleSubmit} onChange={handleChange}>
                             <div className="Checkout-form-group">
-                                <label htmlFor="name">Nombre</label>
-                                <input type="text" id="name" name="name" placeholder="Nombre" required/>
-                                <label htmlFor="lastname">Apellido</label>
-                                <input type="text" id="lastname" name="lastname" placeholder="Apellido" required/>
-                                <label htmlFor="email1">Email</label>
-                                <input type="email" id="email1" name="email1" placeholder="Email" required/>
-                                <label htmlFor="email2">Confirmar Email</label>
-                                <input type="email" id="email2" name="email2" placeholder="Confirmar Email" required/>
-                                <label htmlFor="phone">Teléfono</label>
-                                <input type="tel" id="phone" name="phone" placeholder="Teléfono" required/>
+                                <div className="Checkout-form-name">
+                                    <label htmlFor="name">Nombre: </label>
+                                    <input type="text" id="name" name="name" placeholder="Nombre" required/>
+                                    <div className="Checkout-form-invalid-name">
+                                        {validateName(buyer.name) ? null : 'El nombre es requerido'}
+                                    </div>
+                                </div>
+                                <div className="Checkout-form-lastname">
+                                    <label htmlFor="lastname">Apellido: </label>
+                                    <input type="text" id="lastname" name="lastname" placeholder="Apellido" required/>
+                                    <div className="Checkout-form-invalid-lastname">
+                                        {validateLastName(buyer.lastname) ? null : 'El apellido es requerido'}
+                                    </div>
+                                </div>
+                                <div className="Checkout-form-email">
+                                    <label htmlFor="email">Email: </label>
+                                    <input type="email" id="email" name="email" placeholder="Email" required/>
+                                    <div className="Checkout-form-invalid-email">
+                                        {validateEmail(buyer.email) ? null : <p>Email inválido</p>}
+                                    </div>
+                                </div>
+                                <div className="Checkout-form-email2">
+                                    <label htmlFor="email2">Confirmar Email: </label>
+                                    <input type="email" id="email2" name="email2" placeholder="Confirmar Email" required/>
+                                    <div className="Checkout-form-invalid-email2">
+                                        {buyer.email === buyer.email2 ? null : <p>Los emails no coinciden</p>}
+                                    </div>
+                                </div>
+                                <div className="Checkout-form-phone">
+                                    <label htmlFor="phone">Teléfono: </label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Teléfono" required/>
+                                    <div className="Checkout-form-invalid-phone">
+                                        {validatePhone(buyer.phone) ? null : <p>El Teléfono debe contener 10 dígitos</p>}
+                                    </div>
+                                </div>
                                 <div className="Checkout-form">
                                     <button onClick={() => navigate('/cart')}>Volver al carrito</button>
-                                    <button type="submit">Finalizar compra</button>
+                                    {validateForm() ? <button type="submit">Finalizar compra</button> : <button type="submit" disabled>Finalizar compra</button>}
                                 </div>
                             </div>
                         </form>

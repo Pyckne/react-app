@@ -22,6 +22,6 @@ export const initialState = {
     name: '',
     lastname: '',
     phone: '',
-    email1: '',
+    email: '',
     email2: '',
 };
