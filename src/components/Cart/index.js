@@ -70,7 +70,7 @@ const Cart = () => {
                 <h1>Carrito vacio</h1>
             </div>
             <div className="Cart-empty-body">
-                    <button onClick={() => navigate('/')}>Continuar comprando</button>
+                    <button onClick={() => navigate('/')}>Ver los productos</button>
             </div>
         </div>
         </>

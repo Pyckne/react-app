@@ -1,8 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidget';
 import './style.css';
 
 function NavBar() {
+  const activeStyle = {
+    color: '#000',
+    backgroundColor: '#c4bebe',
+    borderRadius: '20px',
+  };
+  
   return (
     <header className="NavBar-header">
         <div className="NavBar-logo-conteiner">
@@ -11,21 +17,48 @@ function NavBar() {
         <nav className="NavBar-container">
             <ul className="NavBar-list">
                 <li className="NavBar-item">
-                  <Link to="/">Inicio</Link>
+                  <NavLink
+                      to="/"
+                      style={({ isActive }) =>
+                        isActive ? activeStyle : undefined
+                      }
+                    >
+                      Inicio
+                  </NavLink>
                 </li>
                 <li className="NavBar-item">
-                  <Link to="/category/1">Accesorios</Link>
+                  <NavLink
+                      to="/category/1"
+                      style={({ isActive }) =>
+                        isActive ? activeStyle : undefined
+                      }
+                    >
+                      Accesorios
+                  </NavLink>
                 </li>
                 <li className="NavBar-item">
-                  <Link to="/category/2">Muebles</Link>
+                  <NavLink
+                      to="/category/2"
+                      style={({ isActive }) =>
+                        isActive ? activeStyle : undefined
+                      }
+                    >
+                      Muebles
+                  </NavLink>
                 </li>
                 <li className="NavBar-item">
-                <Link to="/cart"><CartWidget /></Link>
+                  <NavLink
+                      to="/cart"
+                      style={({ isActive }) =>
+                        isActive ? activeStyle : undefined
+                      }
+                    >
+                      <CartWidget />
+                  </NavLink>
                 </li>
             </ul>
         </nav>
     </header>
-    
   );
 }
 
