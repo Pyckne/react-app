@@ -6,7 +6,6 @@ const ItemDetailContainerPage = () => {
     
     return (
         <div className="App">
-            <h1>Item Detail Page</h1>
             <ItemDetailContainer index={id}/>
         </div>
     );

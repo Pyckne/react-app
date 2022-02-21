@@ -3,7 +3,7 @@ import ItemListContainer from "../ItemListContainer";
 const HomePage = () => {
   return (
     <div className="App">
-      <ItemListContainer greeting="Bienvenido" />
+      <ItemListContainer greeting="Echa un vistazo a nuestros productos:" />
     </div>
   );
 };

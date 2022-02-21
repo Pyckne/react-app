@@ -28,21 +28,52 @@
 }
 
 .ItemCount-container .ItemCount-item .ItemCount-add-button {
+    color: #fff;
+    background-color: #0f0d0e;
+    border-color: #0f0d0e;
+    border-width: 4px;
+    border-radius: 5px;
     width: 100%;
     padding: 5px;
     margin-bottom: 10px;
     font-size: 1.5rem;
     cursor: pointer;
+    transition: all 0.6s;
+    position: relative;
 }
 
-.ItemCount-container .ItemCount-buttons .ItemCount-action-buttons{
+.ItemCount-container .ItemCount-item .ItemCount-add-button:hover{
+    color: #000;
+    background-color: white;
+}
+
+.ItemCount-container .ItemCount-buttons-group{
     width: 100%;
+    padding-top: 100px;
+}
+
+.ItemCount-container .ItemCount-buttons-group .ItemCount-action-button-shop, .ItemCount-container .ItemCount-buttons-group .ItemCount-action-button-cart {
+    width: 90%;
     height: auto;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    font-size: 1.5rem;
-    color: rgb(0, 0, 0);
+    color: #fff;
+    border-radius: 5px;
+    border-color: rgb(8, 8, 8);
+    font-size: 1.4rem;
     margin: 0 0 20px 0;
-    padding: 2px;
     cursor: pointer;
+    transition: all 0.6s;
+    padding: 5px;
+}
+
+.ItemCount-container .ItemCount-buttons-group .ItemCount-action-button-shop {
+    background-color: #000;
+}
+
+.ItemCount-container .ItemCount-buttons-group .ItemCount-action-button-cart {
+    background-color: rgb(46, 45, 45);
+}
+
+.ItemCount-container .ItemCount-buttons-group .ItemCount-action-button-shop:hover, .ItemCount-container .ItemCount-buttons-group .ItemCount-action-button-cart:hover {
+    background-color: #fff;
+    color: #000;
 }

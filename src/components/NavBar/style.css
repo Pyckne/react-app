@@ -45,6 +45,7 @@
 .NavBar-header .NavBar-container .NavBar-list .NavBar-item a {
     display: block;
     padding: 0.5rem 1rem; 
+    transition: all 0.5s;
 }
 
 .NavBar-header .NavBar-container .NavBar-list .NavBar-item a:hover {

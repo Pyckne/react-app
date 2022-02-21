@@ -6,8 +6,8 @@ export default function ItemListContainer(props) {
 
     return (
         <>
-            <h1>Bienvenido</h1>
-            <p>{props.greeting}</p>
+            <h1 className="ItemListContainer-title">Bienvenido</h1>
+            <p className="ItemListContainer-greeting">{props.greeting}</p>
             <div className="ItemListContainer-container">
                 <ItemList />
             </div>

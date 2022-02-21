@@ -27,19 +27,24 @@ function ItemDetail (item) {
   };
 
   return (
-    <div className="ItemDetail-container">
-      <div className="ItemDetail-img-container"> 
-        <img className="ItemDetail-img" src={item.item.img} alt=""/>
+    <>
+      <div className="ItemDetail-title">
+        <h1 className="ItemListContainer-title">Detalle del producto</h1>
       </div>
-      <div className="ItemDetail-info-container">
-        <h2 className="ItemDetail-tittle">{item.item.name}</h2>
-        <p className="ItemDetail-price">Precio: ${item.item.price}</p>
-        <p className="ItemDetail-description">{item.item.description}</p>
+      <div className="ItemDetail-container">
+        <div className="ItemDetail-img-container"> 
+          <img className="ItemDetail-img" src={item.item.img} alt=""/>
+        </div>
+        <div className="ItemDetail-info-container">
+          <h2 className="ItemDetail-tittle">{item.item.name}</h2>
+          <p className="ItemDetail-price">Precio: ${item.item.price}</p>
+          <p className="ItemDetail-description">{item.item.description}</p>
+        </div>
+        <div className="ItemDetail-actions-container">
+          <ItemCount changeButton={changeButton} onAdd={onAdd} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} quantityToAdd={quantityToAdd} price={item.item.price} stock={item.item.stock} totalPrice={totalPrice}/>
+        </div>
       </div>
-      <div className="ItemDetail-actions-container">
-        <ItemCount changeButton={changeButton} onAdd={onAdd} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} quantityToAdd={quantityToAdd} price={item.item.price} stock={item.item.stock} totalPrice={totalPrice}/>
-      </div>
-    </div>  
+    </>  
   );
   }
   

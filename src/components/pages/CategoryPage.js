@@ -7,14 +7,18 @@ const { id } = useParams();
 if (id === "1") {
     return (
         <div className="App">
-            <h1>Accesorios</h1>
+            <h1 className="ItemListContainer-title">Accesorios</h1>
+            <br/>
+            <br/>
             <ItemListCategory categoryId={id}/>
         </div>
     );
 } else if (id === "2") {
     return (
         <div className="App">
-            <h1>Muebles</h1>
+            <h1 className="ItemListContainer-title">Muebles</h1>
+            <br/>
+            <br/>
             <ItemListCategory categoryId={id}/>
         </div>
     );

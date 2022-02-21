@@ -2,6 +2,8 @@ import './style.css';
 import {useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import {CartContext} from '../../context/CartContext';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 
 const Cart = () => {
@@ -29,17 +31,17 @@ const Cart = () => {
                                 <td>{item.name}</td>
                                 <td>{item.quantity}</td>
                                 <td>${item.price * item.quantity}</td>
-                                <td><button onClick={() => removeItem(item.id)}>X</button></td>
+                                <td><button className="Cart-item-remove" onClick={() => removeItem(item.id)}><HighlightOffIcon/><DeleteForeverIcon/></button></td>
                             </tr>
                         ))}
                         </tbody>
                         <tfoot className="Cart-table-footer">
                             <tr>
                                 <td colSpan="4" className="Cart-table-footer-back-to-home">
-                                    <button onClick={()=> navigate('/')}>Continuar comprando</button> 
+                                    <button className="Cart-table-footer-back-to-home-button" onClick={()=> navigate('/')}>Continuar comprando</button> 
                                 </td>
                                 <td colSpan="1" className="Cart-table-footer-empty-cart">
-                                    <button onClick={()=> clearCart()}>Vaciar carrito</button>
+                                    <button className="Cart-table-footer-empty-cart-button" onClick={()=> clearCart()}>Vaciar carrito</button>
                                 </td>
                             </tr>
                         </tfoot>
@@ -58,7 +60,7 @@ const Cart = () => {
                     </div>
                     <hr/>
                     <div className="Cart-total-footer">
-                        <button onClick={() => navigate('/checkout')}>Comprar</button>
+                        <button className="Cart-total-footer-checkout" onClick={() => navigate('/checkout')}>Finalizar compra</button>
                     </div>
                 </div>
             </div>
@@ -67,15 +69,14 @@ const Cart = () => {
         <>
         <div className="Cart-empty-container">
             <div className="Cart-empty-header">
-                <h1>Carrito vacio</h1>
+                <h1>¡El carrito se encuentra vacio!</h1>
             </div>
             <div className="Cart-empty-body">
-                    <button onClick={() => navigate('/')}>Ver los productos</button>
+                <button className="Cart-empty-button" onClick={() => navigate('/')}>Ir a la tienda</button>
             </div>
         </div>
         </>
-            }
-        </>
+        }</>
     );
 };
 

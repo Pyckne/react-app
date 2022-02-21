@@ -39,4 +39,26 @@
     font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
+    transition: all 0.6s;
+    position: relative;
+}
+
+.Item-container .Item-detail:hover{
+    color: #000;
+    background-color: white;
+    padding-right: 24px;
+    padding-left:8px;
+}
+
+.Item-container .Item-detail:after{
+    content: '»';
+    position: absolute;
+    opacity: 0;  
+    right: -20px;
+    transition: 0.5s;
+}
+  
+.Item-container .Item-detail:hover:after{
+    opacity: 1;
+    right: 10px;
 }
