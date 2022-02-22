@@ -27,10 +27,11 @@ export const CartProvider = ({children}) => {
     };
 
     const removeItem = (id) => {
-        const newCart = cart.filter((item) => item.id !== id);
-        setCart(newCart);
-        setTotal(newCart.reduce((acc, item) => acc + item.price * item.quantityToAdd, 0));
-        setTotalItems(newCart.reduce((acc, item) => acc + item.quantityToAdd, 0));
+        const itemToRemove = cart.find(item => item.id === id);
+        const itemQuantity = itemToRemove.quantity;
+        setCart(cart.filter(item => item.id !== id));
+        setTotal(total - itemToRemove.price * itemQuantity);
+        setTotalItems(totalItems - itemQuantity);
     };
 
     const clearCart = () => {

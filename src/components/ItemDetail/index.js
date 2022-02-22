@@ -1,4 +1,5 @@
 import './style.css';
+import Swal from 'sweetalert2';
 import {useState} from 'react';
 import ItemCount from '../ItemCount/';
 import {useContext} from 'react';
@@ -21,7 +22,15 @@ function ItemDetail (item) {
   }
 
   const onAdd = () => {
-    alert(`Usted agrego ${quantityToAdd} items con un valor total de $${totalPrice}`);
+    Swal.fire({
+      title: 'Producto agregado',
+      text: `Usted a agregado ${quantityToAdd} ${item.item.name} al carrito`,
+      icon: 'success',
+      confirmButtonText: "Aceptar",
+      confirmButtonColor: '#2e2d2d',
+      background: '#7a7b78',
+      color: '#000',
+    })
     addItem(item.item, quantityToAdd);
     setChangeButton(true);
   };

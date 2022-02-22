@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import {CartContext} from '../../context/CartContext';
 import {getFirestore} from '../../firebase/index';
 import {validateEmail, validateName, validateLastName, validatePhone, initialState} from '../../components/ValidateForm/index';
+import Swal from 'sweetalert2';
 
 const Checkout = () => {
     const [buyer, setBuyer] = useState(initialState);
@@ -27,7 +28,18 @@ const Checkout = () => {
 
     ordersCollection.add(order)
         .then((res) => {
-            alert(`Tu pedido ha sido registrado con el ID: ${res.id} \n Este es el detalle de su compra: ${cart.map(item => `\n Producto: ${item.name} - Cantidad: ${item.quantity}`)}`);
+            /* alert(`Tu pedido ha sido registrado con el ID: ${res.id} \n Este es el detalle de su compra: ${cart.map(item => `\n Producto: ${item.name} - Cantidad: ${item.quantity}`)}`); */
+            Swal.fire({
+                title: 'Pedido confirmado',
+                html: `<h2>${buyer.name}</h2>
+                <p>Enviamos un email a la casilla: <b>${buyer.email}</b> con los pasos para realizar el pago.</p>
+                <p>Tu pedido ha sido registrado con el ID: <b>${res.id}</b></p>`,
+                icon: 'success',
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: '#2e2d2d',
+                background: '#7a7b78',
+                color: '#000',
+            });
             setBuyer(initialState);
             updateStock();
             formCarrito.reset();

@@ -30,7 +30,7 @@ const Cart = () => {
                                 <td>{item.name}</td>
                                 <td>{item.quantity}</td>
                                 <td>${item.price * item.quantity}</td>
-                                <td><button className="Cart-item-remove" onClick={() => removeItem(item.id)}><DeleteForeverIcon/></button></td>
+                                <td><button className="Cart-item-remove" onClick={() => removeItem(item.id)}><DeleteForeverIcon /></button></td>
                             </tr>
                         ))}
                         </tbody>
@@ -68,7 +68,7 @@ const Cart = () => {
         <>
         <div className="Cart-empty-container">
             <div className="Cart-empty-header">
-                <h1>¡El carrito se encuentra vacio!</h1>
+                <h1>¡Su carrito se encuentra vacio!</h1>
             </div>
             <div className="Cart-empty-body">
                 <button className="Cart-empty-button" onClick={() => navigate('/')}>Ir a la tienda</button>
