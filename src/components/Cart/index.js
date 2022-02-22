@@ -2,7 +2,6 @@ import './style.css';
 import {useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import {CartContext} from '../../context/CartContext';
-import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 
@@ -31,7 +30,7 @@ const Cart = () => {
                                 <td>{item.name}</td>
                                 <td>{item.quantity}</td>
                                 <td>${item.price * item.quantity}</td>
-                                <td><button className="Cart-item-remove" onClick={() => removeItem(item.id)}><HighlightOffIcon/><DeleteForeverIcon/></button></td>
+                                <td><button className="Cart-item-remove" onClick={() => removeItem(item.id)}><DeleteForeverIcon/></button></td>
                             </tr>
                         ))}
                         </tbody>
