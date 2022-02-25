@@ -150,12 +150,10 @@ const Checkout = () => {
                         </div>
                     </div>
                     <div className="Checkout-form-submit">
-                        {validateForm() ? <button type="submit" className="Checkout-form-valid-btn">Finalizar compra</button> : <button type="submit" className="Checkout-form-invalid-btn" disabled>Finalizar compra</button>}
+                        <button className="Checkout-form-btn Checkout-cart-btn" onClick={() => navigate('/cart')}>Volver al carrito</button>
+                        {validateForm() ? <button type="submit" className="Checkout-form-btn enabled">Finalizar compra</button> : <button type="submit" className="Checkout-form-btn disabled" disabled>Finalizar compra</button>}
                     </div>
                 </form>
-                <div className="Checkout-footer">
-                    <button onClick={() => navigate('/cart')}>Volver al carrito</button>
-                </div>
             </div>
         </div>
     );

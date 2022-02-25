@@ -1,3 +1,10 @@
+.Cart-header {
+    padding-top: 5vh;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
 .Cart-container {
     display: inline-flex;
     justify-content: center;
@@ -131,6 +138,13 @@
 }
 
 /* When the cart is empty */
+
+.Cart-empty-header {
+    padding-top: 5vh;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
 
 .Cart-empty-button{
     background-color: #0f0d0e;

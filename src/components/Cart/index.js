@@ -11,6 +11,9 @@ const Cart = () => {
     return (
         <>{totalItems > 0 ?
         <>
+            <div className="Cart-header">
+                <h1>Carrito</h1>
+            </div>
             <div className="Cart-container">
                 <div className="Cart-items">
                     <table className="Cart-table">
