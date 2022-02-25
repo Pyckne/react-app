@@ -19,7 +19,7 @@ const Checkout = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (validateForm() === true) {
+        if (validateForm() === true && cart.length > 0) {
         const orderDetails = cart.map (item => `ID: ${item.id} - Producto: ${item.name} - Cantidad: ${item.quantity}`);
         const date = new Date();
         const order = {
@@ -56,7 +56,7 @@ const Checkout = () => {
         } else {
             Swal.fire({
                 title: 'Error',
-                text: 'Por favor, verifica los campos del formulario',
+                text: 'Por favor, verifica los campos del formulario o que su carrito no este vacío.',
                 icon: 'error',
                 confirmButtonText: 'Aceptar',
                 confirmButtonColor: '#2e2d2d',
@@ -74,64 +74,11 @@ const Checkout = () => {
         });
     };
 
-    const addValidInvalidClass = (e) => {
-        switch (e.target.name) {
-            case 'name':
-                if (validateName(e.target.value) === false) {
-                    e.target.classList.add('invalid');
-                    e.target.classList.remove('valid');
-                } else {
-                    e.target.classList.remove('invalid');
-                    e.target.classList.add('valid');
-                }
-                break;
-            case 'lastname':
-                if (validateLastName(e.target.value) === false) {
-                    e.target.classList.add('invalid');
-                    e.target.classList.remove('valid');
-                } else {
-                    e.target.classList.remove('invalid');
-                    e.target.classList.add('valid');
-                }
-                break;
-            case 'phone':
-                if (validatePhone(e.target.value) === false) {
-                    e.target.classList.add('invalid');
-                    e.target.classList.remove('valid');
-                } else {
-                    e.target.classList.remove('invalid');
-                    e.target.classList.add('valid');
-                }
-                break;
-            case 'email':
-                if (validateEmail(e.target.value) === false) {
-                    e.target.classList.add('invalid');
-                    e.target.classList.remove('valid');
-                } else {
-                    e.target.classList.remove('invalid');
-                    e.target.classList.add('valid');
-                }
-                break;
-            case 'email2':
-                if (e.target.value !== buyer.email && e.target.value !== '') {
-                    e.target.classList.add('invalid');
-                    e.target.classList.remove('valid');
-                } else {
-                    e.target.classList.remove('invalid');
-                    e.target.classList.add('valid');
-                }
-                break;
-            default:
-                break;
-        }
-    };
-
     const handleChange = (e) => {
         setBuyer({
             ...buyer,
             [e.target.name]: e.target.value
         });
-        addValidInvalidClass(e);
     };
 
     const validateForm = () => {
@@ -154,7 +101,7 @@ const Checkout = () => {
                         <div className="Checkout-form-name">
                             <label htmlFor="name" className="Checkout-lebel">Nombre: </label>
                             <div className="Checkout-form-input-group">
-                                <input className="Checkout-input" type="text" id="name" name="name" placeholder="Nombre" required/>
+                                <input className={validateName(buyer.name) ? "Checkout-input valid" : "Checkout-input invalid"} type="text" id="name" name="name" placeholder="Nombre" required/>
                                 {validateName(buyer.name) ? <CheckCircleOutlineIcon className="Checkout-icon-valid" /> : <ErrorOutlineIcon className="Checkout-icon-invalid" />}
                             </div>
                             {validateName(buyer.name) ? null : 
@@ -164,7 +111,7 @@ const Checkout = () => {
                         <div className="Checkout-form-lastname">
                             <label htmlFor="lastname" className="Checkout-lebel">Apellido: </label>
                             <div className="Checkout-form-input-group">
-                                <input className="Checkout-input" type="text" id="lastname" name="lastname" placeholder="Apellido" required/>
+                                <input className={validateLastName(buyer.lastname) ? "Checkout-input valid" : "Checkout-input invalid"} type="text" id="lastname" name="lastname" placeholder="Apellido" required/>
                                 {validateLastName(buyer.lastname) ? <CheckCircleOutlineIcon className="Checkout-icon-valid" /> : <ErrorOutlineIcon className="Checkout-icon-invalid" />}
                             </div>
                             {validateLastName(buyer.lastname) ? null : 
@@ -174,7 +121,7 @@ const Checkout = () => {
                         <div className="Checkout-form-email">
                             <label htmlFor="email" className="Checkout-lebel">Email: </label>
                             <div className="Checkout-form-input-group">
-                                <input className="Checkout-input" type="email" id="email" name="email" placeholder="Email" required/>
+                                <input className={validateEmail(buyer.email) ? "Checkout-input valid" : "Checkout-input invalid"} type="email" id="email" name="email" placeholder="Email" required/>
                                 {validateEmail(buyer.email) ? <CheckCircleOutlineIcon className="Checkout-icon-valid" /> : <ErrorOutlineIcon className="Checkout-icon-invalid" />}
                             </div>
                             {validateEmail(buyer.email) ? null : 
@@ -184,17 +131,17 @@ const Checkout = () => {
                         <div className="Checkout-form-email2">
                             <label htmlFor="email2" className="Checkout-lebel">Confirmar Email: </label>
                             <div className="Checkout-form-input-group">
-                                <input className="Checkout-input" type="email" id="email2" name="email2" placeholder="Confirmar Email" required/>
-                                {buyer.email === buyer.email2 && buyer.email2 !== "" ? <CheckCircleOutlineIcon className="Checkout-icon-valid" /> : <ErrorOutlineIcon className="Checkout-icon-invalid" />}
+                                <input className={buyer.email === buyer.email2 && validateEmail(buyer.email) ? "Checkout-input valid" : "Checkout-input invalid"} type="email" id="email2" name="email2" placeholder="Confirmar Email" required/>
+                                {buyer.email === buyer.email2 && validateEmail(buyer.email) ? <CheckCircleOutlineIcon className="Checkout-icon-valid" /> : <ErrorOutlineIcon className="Checkout-icon-invalid" />}
                             </div>
-                            {buyer.email === buyer.email2 && buyer.email2 !== "" ? null : 
+                            {buyer.email === buyer.email2 && validateEmail(buyer.email) ? null : 
                                 <p className="Checkout-form-invalid">Los emails deben coincidir</p>
                             }
                         </div>
                         <div className="Checkout-form-phone">
                             <label htmlFor="phone" className="Checkout-lebel">Teléfono: </label>
                             <div className="Checkout-form-input-group">
-                                <input className="Checkout-input" type="tel" id="phone" name="phone" placeholder="Teléfono" required/>
+                                <input className={validatePhone(buyer.phone) ? "Checkout-input valid" : "Checkout-input invalid"} type="tel" id="phone" name="phone" placeholder="Teléfono" required/>
                                 {validatePhone(buyer.phone) ? <CheckCircleOutlineIcon className="Checkout-icon-valid" /> : <ErrorOutlineIcon className="Checkout-icon-invalid" />}
                             </div>
                             {validatePhone(buyer.phone) ? null :      
