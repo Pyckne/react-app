@@ -5,3 +5,15 @@ body{
 .App {
   text-align: center;
 }
+
+.ItemList-loading, .ItemDetail-loading, .ItemListCategory-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ItemDetail-loading{
+  margin-top: 140px;
+  padding-top: 5vh;
+}

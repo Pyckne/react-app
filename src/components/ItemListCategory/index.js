@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import Item from '../Item/index.js';
 import {getFirestore} from '../../firebase/index.js';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 const ItemListCategory = () => {
     const { id } = useParams();
@@ -38,8 +40,8 @@ const ItemListCategory = () => {
 
     return (
         <div className="ItemListContainer-container">
-            { loading ? <h1>Loading...</h1> : null }
-            { error ? <h1>Error</h1> : null }
+            { loading ? <div className="ItemListCategory-loading"><h1>Cargando...</h1><Box><CircularProgress /></Box></div> : null }
+            { error ? <h1>Error al cargar los datos</h1> : null }
             { items.map(item => <Item key={item.id} item={item} />) }
         </div>
     );

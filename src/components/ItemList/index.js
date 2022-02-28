@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import Item from '../Item';
 import {getFirestore} from '../../firebase/index.js';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 function ItemList () {
     const [items, setItems] = useState([]);
@@ -36,8 +38,8 @@ function ItemList () {
     }, []);
     return (
         <>
-            {loading && <div>Cargando...</div>}
-            {error && <div>Error al cargar los datos</div>}
+            {loading && <div className="ItemList-loading"><h1>Cargando...</h1><Box sx={{ display: 'flex', justifyContent: 'center' }}><CircularProgress /></Box></div>}
+            {error && <h1>Error al cargar los datos</h1>}
             {items.map(item => <Item key={item.id} item={item} />)}
         </>  );
 }

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/index.js';
 import {getFirestore} from '../../firebase/index.js';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 function ItemDetailContainer (i) {
     const [item, setItem] = useState(null);
@@ -35,8 +37,8 @@ function ItemDetailContainer (i) {
 
     return (
         <>
-            { loading ? <h1>Loading...</h1> : null }
-            { error ? <h1>Error</h1> : null }
+            { loading ? <div className="ItemDetail-loading"><h1>Cargando...</h1><Box><CircularProgress /></Box></div> : null }
+            { error ? <h1>Error al cargar los datos</h1> : null }
             { item ? <ItemDetail item={item} /> : null }
         </>
       );
