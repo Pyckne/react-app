@@ -15,12 +15,12 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/">
+          <Route path="/react-app">
             <Route index element={<HomePage />} />        
-              <Route path="item/:id" element={<ItemDetailContainerPage />} />
-              <Route path="category/:id" element={<CategoryPage />} />
-              <Route path="cart" element={<CartPage />} />
-              <Route path="checkout" element={<CheckoutPage />} />
+              <Route path="/react-app/item/:id" element={<ItemDetailContainerPage />} />
+              <Route path="/react-app/category/:id" element={<CategoryPage />} />
+              <Route path="/react-app/cart" element={<CartPage />} />
+              <Route path="/react-app/checkout" element={<CheckoutPage />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

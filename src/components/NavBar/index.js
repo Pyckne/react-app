@@ -12,13 +12,13 @@ function NavBar() {
   return (
     <header className="NavBar-header">
         <div className="NavBar-logo-conteiner">
-          <Link to="/">Francia's Shop</Link>
+          <Link to="/react-app">Francia's Shop</Link>
         </div>
         <nav className="NavBar-container">
             <ul className="NavBar-list">
                 <li className="NavBar-item">
                   <NavLink
-                      to="/"
+                      to="/react-app"
                       style={({ isActive }) =>
                         isActive ? activeStyle : undefined
                       }
@@ -28,7 +28,7 @@ function NavBar() {
                 </li>
                 <li className="NavBar-item">
                   <NavLink
-                      to="/category/1"
+                      to="/react-app/category/1"
                       style={({ isActive }) =>
                         isActive ? activeStyle : undefined
                       }
@@ -38,7 +38,7 @@ function NavBar() {
                 </li>
                 <li className="NavBar-item">
                   <NavLink
-                      to="/category/2"
+                      to="/react-app/category/2"
                       style={({ isActive }) =>
                         isActive ? activeStyle : undefined
                       }
@@ -48,7 +48,7 @@ function NavBar() {
                 </li>
                 <li className="NavBar-item">
                   <NavLink
-                      to="/cart"
+                      to="/react-app/cart"
                       style={({ isActive }) =>
                         isActive ? activeStyle : undefined
                       }

@@ -50,7 +50,7 @@ const Checkout = () => {
         .catch(err => console.log(err))
         .finally(() => {
             clearCart();
-            navigate('/');
+            navigate('/react-app');
         
             })
         } else {
@@ -150,7 +150,7 @@ const Checkout = () => {
                         </div>
                     </div>
                     <div className="Checkout-form-submit">
-                        <button className="Checkout-form-btn Checkout-cart-btn" onClick={() => navigate('/cart')}>Volver al carrito</button>
+                        <button className="Checkout-form-btn Checkout-cart-btn" onClick={() => navigate('/react-app/cart')}>Volver al carrito</button>
                         {validateForm() ? <button type="submit" className="Checkout-form-btn enabled">Finalizar compra</button> : <button type="submit" className="Checkout-form-btn disabled" disabled>Finalizar compra</button>}
                     </div>
                 </form>

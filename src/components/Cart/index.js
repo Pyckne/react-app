@@ -40,7 +40,7 @@ const Cart = () => {
                         <tfoot className="Cart-table-footer">
                             <tr>
                                 <td colSpan="4" className="Cart-table-footer-back-to-home">
-                                    <button className="Cart-table-footer-back-to-home-button" onClick={()=> navigate('/')}>Continuar comprando</button> 
+                                    <button className="Cart-table-footer-back-to-home-button" onClick={()=> navigate('/react-app')}>Continuar comprando</button> 
                                 </td>
                                 <td colSpan="1" className="Cart-table-footer-empty-cart">
                                     <button className="Cart-table-footer-empty-cart-button" onClick={()=> clearCart()}>Vaciar carrito</button>
@@ -62,7 +62,7 @@ const Cart = () => {
                     </div>
                     <hr/>
                     <div className="Cart-total-footer">
-                        <button className="Cart-total-footer-checkout" onClick={() => navigate('/checkout')}>Finalizar compra</button>
+                        <button className="Cart-total-footer-checkout" onClick={() => navigate('/react-app/checkout')}>Finalizar compra</button>
                     </div>
                 </div>
             </div>
