@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/react-app">
+          <Route path="/">
             <Route index element={<HomePage />} />        
               <Route path="item/:id" element={<ItemDetailContainerPage />} />
               <Route path="category/:id" element={<CategoryPage />} />
