@@ -4,7 +4,7 @@ El proyecto se enfoca en trabajar las bases de React, desarrollarlo basandose en
 
 # Librerias
 
-Por el momento estoy trabajando con react-router-dom para la navegación, material-ui para los counters e icónos, sweetalert2 para el feedback, firebase/firestore para almacenamiento de la colección de items y órdenes haciendo peticiones de get/post/update, es dable destacar que json-server sigue instalado para seguir testeando en el futuro, a este punto se eliminaron todas las promises, setTimeout y la const `items.js` de productos estáticos, en el package.json continua el scrip `npm run json-server` pero el mock `db.json` fué removido, por otra parte en las dependencias se agregó dotenv para ocultar los datos de la API de Firebase.
+Por el momento estoy trabajando con react-router-dom para la navegación, material-ui para los counters e icónos, sweetalert2 para el feedback, firebase/firestore para almacenamiento de la colección de items y órdenes haciendo peticiones de get/post/update, es dable destacar que json-server sigue instalado para seguir testeando en el futuro, a este punto se eliminaron todas las promises, setTimeout y la const `items.js` de productos estáticos, en el package.json continua el scripts `npm run json-server` pero el mock `db.json` fué removido, por otra parte en las dependencias se agregó dotenv para ocultar los datos de la API de Firebase.
 
 # Desarrollo
 
