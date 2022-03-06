@@ -74,7 +74,7 @@ const Cart = () => {
                 <h1>¡Su carrito se encuentra vacio!</h1>
             </div>
             <div className="Cart-empty-body">
-                <button className="Cart-empty-button" onClick={() => navigate('/')}>Ir a la tienda</button>
+                <button className="Cart-empty-button" onClick={() => navigate('/react-app')}>Ir a la tienda</button>
             </div>
         </div>
         </>

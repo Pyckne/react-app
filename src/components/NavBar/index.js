@@ -19,9 +19,13 @@ function NavBar() {
                 <li className="NavBar-item">
                   <NavLink
                       to="/react-app"
-                      style={({ isActive }) =>
-                        isActive ? activeStyle : undefined
-                      }
+                      style={() => {
+                        if (window.location.pathname === '/react-app') {
+                          return activeStyle;
+                        } else {
+                          return {};
+                        }
+                      }}
                     >
                       Inicio
                   </NavLink>
